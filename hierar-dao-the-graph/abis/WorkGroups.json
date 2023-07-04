@@ -1,0 +1,479 @@
+[
+  { "inputs": [], "stateMutability": "nonpayable", "type": "constructor" },
+  { "inputs": [], "name": "WorkGroups__NotOwner", "type": "error" },
+  {
+    "inputs": [],
+    "name": "WorkGroups__SubordinateRoleRequired",
+    "type": "error"
+  },
+  { "inputs": [], "name": "WorkGroups__SuperiorRoleRequired", "type": "error" },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "department",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "subordinateAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "id",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "modification",
+        "type": "string"
+      }
+    ],
+    "name": "DepartmentalSubordinateModified",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "department",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "superiorAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "id",
+        "type": "bytes32"
+      }
+    ],
+    "name": "DepartmentalSuperiorAssigned",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "oldSuperior",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "newSuperior",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "department",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "newId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "DepartmentalSuperiorModified",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "subordinateAddress",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "performanceScore",
+        "type": "uint256"
+      }
+    ],
+    "name": "SubordinateAppraisal",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "taskID",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum WorkGroups.Status",
+        "name": "taskStatus",
+        "type": "uint8"
+      }
+    ],
+    "name": "TaskIssued",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "taskID",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "location",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum WorkGroups.Status",
+        "name": "taskStatus",
+        "type": "uint8"
+      }
+    ],
+    "name": "TaskReport",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "subordinateAddress",
+        "type": "address"
+      },
+      { "internalType": "string", "name": "department", "type": "string" },
+      { "internalType": "bytes32", "name": "superiorId", "type": "bytes32" }
+    ],
+    "name": "addSubordinate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "admin",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "department", "type": "string" },
+      {
+        "internalType": "address",
+        "name": "superiorAddress",
+        "type": "address"
+      }
+    ],
+    "name": "appointSuperior",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "", "type": "string" },
+      { "internalType": "address", "name": "", "type": "address" }
+    ],
+    "name": "departmentalRoles",
+    "outputs": [
+      {
+        "internalType": "enum WorkGroups.RoleType",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "", "type": "string" },
+      { "internalType": "bytes32", "name": "", "type": "bytes32" }
+    ],
+    "name": "departmentalSuperior",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "superiorAddress",
+        "type": "address"
+      },
+      {
+        "internalType": "enum WorkGroups.RoleType",
+        "name": "superiorRole",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "department", "type": "string" },
+      { "internalType": "bytes32", "name": "subordinateID", "type": "bytes32" }
+    ],
+    "name": "getSubordinate",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "subordinateAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "enum WorkGroups.RoleType",
+            "name": "subordinateRole",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "performanceScore",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct WorkGroups.Subordinate",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "department", "type": "string" },
+      { "internalType": "bytes32", "name": "subordinateId", "type": "bytes32" }
+    ],
+    "name": "getSubordinateStatus",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "department", "type": "string" },
+      { "internalType": "bytes32", "name": "superiorID", "type": "bytes32" }
+    ],
+    "name": "getSuperior",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "superiorAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "enum WorkGroups.RoleType",
+            "name": "superiorRole",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct WorkGroups.Superior",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "department", "type": "string" },
+      { "internalType": "bytes32", "name": "superiorId", "type": "bytes32" }
+    ],
+    "name": "getSuperiorStatus",
+    "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "department", "type": "string" },
+      { "internalType": "bytes32", "name": "taskID", "type": "bytes32" }
+    ],
+    "name": "getTask",
+    "outputs": [
+      {
+        "components": [
+          { "internalType": "string", "name": "department", "type": "string" },
+          { "internalType": "string", "name": "description", "type": "string" },
+          { "internalType": "string", "name": "location", "type": "string" },
+          { "internalType": "uint256", "name": "deadline", "type": "uint256" },
+          {
+            "internalType": "enum WorkGroups.Status",
+            "name": "taskStatus",
+            "type": "uint8"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "subordinateAddress",
+                "type": "address"
+              },
+              {
+                "internalType": "enum WorkGroups.RoleType",
+                "name": "subordinateRole",
+                "type": "uint8"
+              },
+              {
+                "internalType": "uint256",
+                "name": "performanceScore",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct WorkGroups.Subordinate",
+            "name": "taskAssignee",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct WorkGroups.Task",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes32", "name": "superiorId", "type": "bytes32" },
+      { "internalType": "bytes32", "name": "subordinateID", "type": "bytes32" },
+      { "internalType": "string", "name": "description", "type": "string" },
+      { "internalType": "string", "name": "location", "type": "string" },
+      { "internalType": "string", "name": "department", "type": "string" },
+      { "internalType": "uint256", "name": "numberOfDays", "type": "uint256" }
+    ],
+    "name": "issueTask",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [{ "internalType": "address", "name": "", "type": "address" }],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes32", "name": "taskId", "type": "bytes32" },
+      { "internalType": "bytes32", "name": "superiorId", "type": "bytes32" },
+      { "internalType": "bytes32", "name": "subordinateId", "type": "bytes32" },
+      { "internalType": "string", "name": "department", "type": "string" }
+    ],
+    "name": "performTaskAppraisal",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes32", "name": "superiorId", "type": "bytes32" },
+      { "internalType": "bytes32", "name": "subordinateId", "type": "bytes32" },
+      { "internalType": "string", "name": "department", "type": "string" }
+    ],
+    "name": "removeSubordinate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "bytes32", "name": "taskID", "type": "bytes32" },
+      { "internalType": "bytes32", "name": "subordinateId", "type": "bytes32" },
+      { "internalType": "string", "name": "location", "type": "string" },
+      { "internalType": "string", "name": "department", "type": "string" },
+      { "internalType": "uint256", "name": "statusNumber", "type": "uint256" }
+    ],
+    "name": "reportTask",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "address", "name": "newOwner", "type": "address" }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "string", "name": "department", "type": "string" },
+      { "internalType": "address", "name": "oldSuperior", "type": "address" },
+      { "internalType": "address", "name": "newSuperior", "type": "address" },
+      { "internalType": "bytes32", "name": "subordinateID", "type": "bytes32" }
+    ],
+    "name": "upgradeSubordinate",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

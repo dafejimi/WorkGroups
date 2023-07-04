@@ -1,0 +1,1071 @@
+{
+  "address": "0x7bab5d3e304a52D629b94e9529677ac6b05157EA",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "WorkGroups__NotOwner",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "WorkGroups__SubordinateRoleRequired",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "WorkGroups__SuperiorRoleRequired",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "department",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "subordinateAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "id",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "modification",
+          "type": "string"
+        }
+      ],
+      "name": "DepartmentalSubordinateModified",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "department",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "superiorAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "id",
+          "type": "bytes32"
+        }
+      ],
+      "name": "DepartmentalSuperiorAssigned",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "oldSuperior",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newSuperior",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "department",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "newId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "DepartmentalSuperiorModified",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "subordinateAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "performanceScore",
+          "type": "uint256"
+        }
+      ],
+      "name": "SubordinateAppraisal",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "location",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "taskID",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum WorkGroups.Status",
+          "name": "taskStatus",
+          "type": "uint8"
+        }
+      ],
+      "name": "TaskIssued",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "taskID",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "location",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "enum WorkGroups.Status",
+          "name": "taskStatus",
+          "type": "uint8"
+        }
+      ],
+      "name": "TaskReport",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "subordinateAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "department",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "superiorId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "addSubordinate",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "admin",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "department",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "superiorAddress",
+          "type": "address"
+        }
+      ],
+      "name": "appointSuperior",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "departmentalRoles",
+      "outputs": [
+        {
+          "internalType": "enum WorkGroups.RoleType",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "departmentalSuperior",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "superiorAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "enum WorkGroups.RoleType",
+          "name": "superiorRole",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "department",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "subordinateID",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getSubordinate",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "subordinateAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "enum WorkGroups.RoleType",
+              "name": "subordinateRole",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "performanceScore",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct WorkGroups.Subordinate",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "department",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "subordinateId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getSubordinateStatus",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "department",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "superiorID",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getSuperior",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "superiorAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "enum WorkGroups.RoleType",
+              "name": "superiorRole",
+              "type": "uint8"
+            }
+          ],
+          "internalType": "struct WorkGroups.Superior",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "department",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "superiorId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getSuperiorStatus",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "department",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "taskID",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getTask",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "department",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "description",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "location",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "deadline",
+              "type": "uint256"
+            },
+            {
+              "internalType": "enum WorkGroups.Status",
+              "name": "taskStatus",
+              "type": "uint8"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "subordinateAddress",
+                  "type": "address"
+                },
+                {
+                  "internalType": "enum WorkGroups.RoleType",
+                  "name": "subordinateRole",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "performanceScore",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct WorkGroups.Subordinate",
+              "name": "taskAssignee",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct WorkGroups.Task",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "superiorId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "subordinateID",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "string",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "location",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "department",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "numberOfDays",
+          "type": "uint256"
+        }
+      ],
+      "name": "issueTask",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "taskId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "superiorId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "subordinateId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "string",
+          "name": "department",
+          "type": "string"
+        }
+      ],
+      "name": "performTaskAppraisal",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "superiorId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "subordinateId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "string",
+          "name": "department",
+          "type": "string"
+        }
+      ],
+      "name": "removeSubordinate",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "taskID",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "subordinateId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "string",
+          "name": "location",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "department",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "statusNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "reportTask",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "department",
+          "type": "string"
+        },
+        {
+          "internalType": "address",
+          "name": "oldSuperior",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "newSuperior",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "subordinateID",
+          "type": "bytes32"
+        }
+      ],
+      "name": "upgradeSubordinate",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xed5e321cb8e15e665f95371ae49751ca6f31d3522af48ca89811ee903e723533",
+  "receipt": {
+    "to": null,
+    "from": "0xae6009Dd36eBBE2d36DBEBA64004e31517Cc48BB",
+    "contractAddress": "0x7bab5d3e304a52D629b94e9529677ac6b05157EA",
+    "transactionIndex": 28,
+    "gasUsed": "2265443",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000800000000000000000000000000000000000000000000200000000000000000000000000000000040000000000000000000000000000000001000000000000000000000000000000000000020000000000000000000800000002000000000000000000000000400000000000000000000000000000000000804000000000000000000000000000000000000000000000000000000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xc570991226dd142bc9d61f3436994bca1b11ec4df6033ac3b591f07e517321a0",
+    "transactionHash": "0xed5e321cb8e15e665f95371ae49751ca6f31d3522af48ca89811ee903e723533",
+    "logs": [
+      {
+        "transactionIndex": 28,
+        "blockNumber": 3508694,
+        "transactionHash": "0xed5e321cb8e15e665f95371ae49751ca6f31d3522af48ca89811ee903e723533",
+        "address": "0x7bab5d3e304a52D629b94e9529677ac6b05157EA",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x000000000000000000000000ae6009dd36ebbe2d36dbeba64004e31517cc48bb"
+        ],
+        "data": "0x",
+        "logIndex": 45,
+        "blockHash": "0xc570991226dd142bc9d61f3436994bca1b11ec4df6033ac3b591f07e517321a0"
+      }
+    ],
+    "blockNumber": 3508694,
+    "cumulativeGasUsed": "6477712",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "f7d67593ce2112339d338ed7892abcd0",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.17+commit.8df45f5f\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"WorkGroups__NotOwner\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"WorkGroups__SubordinateRoleRequired\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"WorkGroups__SuperiorRoleRequired\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"subordinateAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"id\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"modification\",\"type\":\"string\"}],\"name\":\"DepartmentalSubordinateModified\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"superiorAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"id\",\"type\":\"bytes32\"}],\"name\":\"DepartmentalSuperiorAssigned\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"oldSuperior\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newSuperior\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"newId\",\"type\":\"bytes32\"}],\"name\":\"DepartmentalSuperiorModified\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"subordinateAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"performanceScore\",\"type\":\"uint256\"}],\"name\":\"SubordinateAppraisal\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"location\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"taskID\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"enum WorkGroups.Status\",\"name\":\"taskStatus\",\"type\":\"uint8\"}],\"name\":\"TaskIssued\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"taskID\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"location\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"enum WorkGroups.Status\",\"name\":\"taskStatus\",\"type\":\"uint8\"}],\"name\":\"TaskReport\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"subordinateAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"superiorId\",\"type\":\"bytes32\"}],\"name\":\"addSubordinate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"admin\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"superiorAddress\",\"type\":\"address\"}],\"name\":\"appointSuperior\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"departmentalRoles\",\"outputs\":[{\"internalType\":\"enum WorkGroups.RoleType\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"departmentalSuperior\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"superiorAddress\",\"type\":\"address\"},{\"internalType\":\"enum WorkGroups.RoleType\",\"name\":\"superiorRole\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"subordinateID\",\"type\":\"bytes32\"}],\"name\":\"getSubordinate\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"subordinateAddress\",\"type\":\"address\"},{\"internalType\":\"enum WorkGroups.RoleType\",\"name\":\"subordinateRole\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"performanceScore\",\"type\":\"uint256\"}],\"internalType\":\"struct WorkGroups.Subordinate\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"subordinateId\",\"type\":\"bytes32\"}],\"name\":\"getSubordinateStatus\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"superiorID\",\"type\":\"bytes32\"}],\"name\":\"getSuperior\",\"outputs\":[{\"components\":[{\"internalType\":\"address\",\"name\":\"superiorAddress\",\"type\":\"address\"},{\"internalType\":\"enum WorkGroups.RoleType\",\"name\":\"superiorRole\",\"type\":\"uint8\"}],\"internalType\":\"struct WorkGroups.Superior\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"superiorId\",\"type\":\"bytes32\"}],\"name\":\"getSuperiorStatus\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"taskID\",\"type\":\"bytes32\"}],\"name\":\"getTask\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"location\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"enum WorkGroups.Status\",\"name\":\"taskStatus\",\"type\":\"uint8\"},{\"components\":[{\"internalType\":\"address\",\"name\":\"subordinateAddress\",\"type\":\"address\"},{\"internalType\":\"enum WorkGroups.RoleType\",\"name\":\"subordinateRole\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"performanceScore\",\"type\":\"uint256\"}],\"internalType\":\"struct WorkGroups.Subordinate\",\"name\":\"taskAssignee\",\"type\":\"tuple\"}],\"internalType\":\"struct WorkGroups.Task\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"superiorId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"subordinateID\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"description\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"location\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"numberOfDays\",\"type\":\"uint256\"}],\"name\":\"issueTask\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"taskId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"superiorId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"subordinateId\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"}],\"name\":\"performTaskAppraisal\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"superiorId\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"subordinateId\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"}],\"name\":\"removeSubordinate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"taskID\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"subordinateId\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"location\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"statusNumber\",\"type\":\"uint256\"}],\"name\":\"reportTask\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"department\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"oldSuperior\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"newSuperior\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"subordinateID\",\"type\":\"bytes32\"}],\"name\":\"upgradeSubordinate\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/WorkGroups.sol\":\"WorkGroups\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    constructor() {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        _checkOwner();\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if the sender is not the owner.\\n     */\\n    function _checkOwner() internal view virtual {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby removing any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xa94b34880e3c1b0b931662cb1c09e5dfa6662f31cba80e07c5ee71cd135c9673\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Counters.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Counters.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @title Counters\\n * @author Matt Condon (@shrugs)\\n * @dev Provides counters that can only be incremented, decremented or reset. This can be used e.g. to track the number\\n * of elements in a mapping, issuing ERC721 ids, or counting request ids.\\n *\\n * Include with `using Counters for Counters.Counter;`\\n */\\nlibrary Counters {\\n    struct Counter {\\n        // This variable should never be directly accessed by users of the library: interactions must be restricted to\\n        // the library's function. As of Solidity v0.5.2, this cannot be enforced, though there is a proposal to add\\n        // this feature: see https://github.com/ethereum/solidity/issues/4637\\n        uint256 _value; // default: 0\\n    }\\n\\n    function current(Counter storage counter) internal view returns (uint256) {\\n        return counter._value;\\n    }\\n\\n    function increment(Counter storage counter) internal {\\n        unchecked {\\n            counter._value += 1;\\n        }\\n    }\\n\\n    function decrement(Counter storage counter) internal {\\n        uint256 value = counter._value;\\n        require(value > 0, \\\"Counter: decrement overflow\\\");\\n        unchecked {\\n            counter._value = value - 1;\\n        }\\n    }\\n\\n    function reset(Counter storage counter) internal {\\n        counter._value = 0;\\n    }\\n}\\n\",\"keccak256\":\"0xf0018c2440fbe238dd3a8732fa8e17a0f9dce84d31451dc8a32f6d62b349c9f1\",\"license\":\"MIT\"},\"contracts/WorkGroups.sol\":{\"content\":\"// SPDX-License-Identifier: SEE LICENSE IN LICENSE\\r\\npragma solidity ^0.8.17;\\r\\n\\r\\nimport \\\"@openzeppelin/contracts/utils/Counters.sol\\\";\\r\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\r\\n\\r\\nerror WorkGroups__NotOwner();\\r\\nerror WorkGroups__SuperiorRoleRequired();\\r\\nerror WorkGroups__SubordinateRoleRequired();\\r\\n\\r\\ncontract WorkGroups is Ownable {\\r\\n    using Counters for Counters.Counter;\\r\\n    Counters.Counter private _subordinateID;\\r\\n    Counters.Counter private _superiorID;\\r\\n\\r\\n    enum RoleType {\\r\\n        NONE,\\r\\n        SUPERIOR,\\r\\n        SUBORDINATE\\r\\n    }\\r\\n\\r\\n    enum Status {\\r\\n        ISSUED,\\r\\n        IN_PROGRESS,\\r\\n        COMPLETE\\r\\n    }\\r\\n\\r\\n    struct Superior {\\r\\n        address superiorAddress;\\r\\n        RoleType superiorRole;\\r\\n    }\\r\\n\\r\\n    struct Subordinate {\\r\\n        address subordinateAddress;\\r\\n        RoleType subordinateRole;\\r\\n        uint256 performanceScore;\\r\\n    } \\r\\n\\r\\n    // implement a task dashboard on the front end\\r\\n    // implement a departmental/subordinate dashboard also\\r\\n    struct Task {\\r\\n        string department;\\r\\n        string description;\\r\\n        string location;\\r\\n        uint256 deadline;\\r\\n        Status taskStatus;\\r\\n        Subordinate taskAssignee;\\r\\n    }\\r\\n\\r\\n    event DepartmentalSuperiorAssigned(\\r\\n        string department,\\r\\n        address superiorAddress,\\r\\n        bytes32 id\\r\\n    );\\r\\n\\r\\n    event DepartmentalSubordinateModified(\\r\\n        string department,\\r\\n        address subordinateAddress,\\r\\n        bytes32 id,\\r\\n        string modification        \\r\\n    );\\r\\n\\r\\n    event DepartmentalSuperiorModified(\\r\\n        address oldSuperior, \\r\\n        address newSuperior,\\r\\n        string department,\\r\\n        bytes32 newId\\r\\n    );\\r\\n\\r\\n    event TaskIssued(\\r\\n        string description,\\r\\n        string location,\\r\\n        bytes32 taskID,\\r\\n        Status taskStatus\\r\\n    );\\r\\n\\r\\n    event TaskReport(\\r\\n        bytes32 taskID, \\r\\n        string location, \\r\\n        Status taskStatus\\r\\n    );\\r\\n\\r\\n    event SubordinateAppraisal(\\r\\n        address subordinateAddress,\\r\\n        uint256 performanceScore\\r\\n    );\\r\\n\\r\\n    address public admin;\\r\\n\\r\\n    mapping(string => mapping(bytes32 => Task)) departmentalTask;\\r\\n\\r\\n    mapping(string => mapping(bytes32 => Superior)) public departmentalSuperior;\\r\\n    mapping(string => mapping(address => bool)) departmentalSuperiorToBool;\\r\\n\\r\\n    mapping(string => mapping(bytes32 => Subordinate)) departmentalSubordinate;\\r\\n    mapping(string => mapping(address => bool)) departmentalSubordinateToBool;\\r\\n    \\r\\n    mapping(string => mapping(address => RoleType)) public departmentalRoles;\\r\\n    \\r\\n\\r\\n    modifier onlySuperior(string memory department, bytes32 superiorId) {\\r\\n        bool hierarchyStatus = getSuperiorStatus(department, superiorId);\\r\\n        if (hierarchyStatus != true) {\\r\\n            revert WorkGroups__SuperiorRoleRequired();\\r\\n        }\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    modifier onlySubordinate(string memory department,bytes32 subordinateId) {\\r\\n        bool hierarchyStatus = getSubordinateStatus(department, subordinateId);\\r\\n        if (hierarchyStatus != true) {\\r\\n            revert WorkGroups__SubordinateRoleRequired();\\r\\n        }\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    modifier onlyAdmin() {\\r\\n        if (msg.sender != admin) revert WorkGroups__NotOwner();\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    constructor() {\\r\\n        admin = msg.sender;\\r\\n    }\\r\\n\\r\\n    function appointSuperior(\\r\\n        string memory department,\\r\\n        address superiorAddress\\r\\n    ) public onlyAdmin {\\r\\n        _superiorID.increment();\\r\\n        uint256 newSuperiorId = _superiorID.current();\\r\\n        Superior memory newSuperior = Superior(superiorAddress, RoleType.SUPERIOR);\\r\\n        bytes32 superiorID = keccak256(bytes(abi.encode(department, newSuperiorId)));      \\r\\n\\r\\n        departmentalSuperior[department][superiorID] = newSuperior;\\r\\n        departmentalSuperiorToBool[department][superiorAddress] = true;\\r\\n        departmentalRoles[department][superiorAddress] = RoleType.SUPERIOR;\\r\\n\\r\\n        emit DepartmentalSuperiorAssigned(\\r\\n            department,\\r\\n            superiorAddress,\\r\\n            superiorID\\r\\n        );\\r\\n    }\\r\\n\\r\\n    function addSubordinate(\\r\\n        address subordinateAddress,\\r\\n        string memory department,\\r\\n        bytes32 superiorId\\r\\n    ) public onlySuperior(department, superiorId) {\\r\\n        _subordinateID.increment();\\r\\n        uint256 newSubordinateId = _subordinateID.current();\\r\\n        Subordinate memory newSubordinate = Subordinate(subordinateAddress, RoleType.SUBORDINATE, 0);\\r\\n        bytes32 subordinateID = keccak256(bytes(abi.encode(department, newSubordinateId)));\\r\\n\\r\\n\\r\\n        departmentalSubordinate[department][subordinateID] = newSubordinate;\\r\\n        departmentalRoles[department][subordinateAddress] = RoleType.SUBORDINATE;\\r\\n        departmentalSubordinateToBool[department][newSubordinate.subordinateAddress] = true;\\r\\n\\r\\n        emit DepartmentalSubordinateModified(department, subordinateAddress, subordinateID, \\\"added\\\");\\r\\n    }\\r\\n\\r\\n    function removeSubordinate(\\r\\n        bytes32 superiorId,\\r\\n        bytes32 subordinateId, \\r\\n        string memory department\\r\\n    ) public onlySuperior(department, superiorId) {\\r\\n        Subordinate memory existingSubordinate = departmentalSubordinate[department][subordinateId];\\r\\n\\r\\n        departmentalRoles[department][existingSubordinate.subordinateAddress] = RoleType.NONE;\\r\\n        departmentalSubordinateToBool[department][existingSubordinate.subordinateAddress] = false;\\r\\n\\r\\n        emit DepartmentalSubordinateModified(department, existingSubordinate.subordinateAddress, subordinateId, \\\"removed\\\");\\r\\n    }\\r\\n\\r\\n    function upgradeSubordinate(\\r\\n        string memory department,\\r\\n        address oldSuperior, \\r\\n        address newSuperior, \\r\\n        bytes32 subordinateID\\r\\n    ) public onlyAdmin {\\r\\n        _superiorID.increment();\\r\\n        uint256 newSuperiorId = _superiorID.current();\\r\\n        Superior memory superior = Superior(newSuperior, RoleType.SUPERIOR);\\r\\n        bytes32 superiorId = keccak256(bytes(abi.encode(department, newSuperiorId)));\\r\\n\\r\\n        Subordinate memory existingSubordinate = departmentalSubordinate[department][subordinateID];\\r\\n\\r\\n        if(departmentalSubordinateToBool[department][existingSubordinate.subordinateAddress] == true){\\r\\n            departmentalSubordinateToBool[department][existingSubordinate.subordinateAddress] = false;\\r\\n        }\\r\\n\\r\\n        departmentalSuperior[department][superiorId] = superior;\\r\\n\\r\\n        departmentalSuperiorToBool[department][oldSuperior] = false;\\r\\n        departmentalSuperiorToBool[department][existingSubordinate.subordinateAddress] = true;\\r\\n\\r\\n        departmentalRoles[department][oldSuperior] = RoleType.NONE;\\r\\n        departmentalRoles[department][newSuperior] = RoleType.SUPERIOR;\\r\\n\\r\\n        emit DepartmentalSuperiorModified(oldSuperior, newSuperior, department, superiorId);\\r\\n    }\\r\\n\\r\\n    function issueTask(\\r\\n        bytes32 superiorId,\\r\\n        bytes32 subordinateID,\\r\\n        string memory description,\\r\\n        string memory location,\\r\\n        string memory department,\\r\\n        uint256 numberOfDays\\r\\n    ) public onlySuperior(department, superiorId) {\\r\\n        uint deadline = block.timestamp + (numberOfDays * 1 days);\\r\\n        Subordinate memory subordinate = departmentalSubordinate[department][subordinateID];\\r\\n        Task memory newTask = Task(department, description, location, deadline, Status.ISSUED, subordinate );        \\r\\n\\r\\n        bytes32 taskID = keccak256(bytes(string.concat(description, location)));\\r\\n\\r\\n        departmentalTask[department][taskID] = newTask;\\r\\n\\r\\n        emit TaskIssued(description, location, taskID, newTask.taskStatus);\\r\\n    }\\r\\n\\r\\n    function reportTask(\\r\\n        bytes32 taskID,\\r\\n        bytes32 subordinateId,\\r\\n        string memory location,\\r\\n        string memory department,\\r\\n        uint256 statusNumber\\r\\n    ) public onlySubordinate(department, subordinateId) {\\r\\n        Status taskStatus;\\r\\n\\r\\n        if (statusNumber == 1) {\\r\\n            taskStatus = Status.IN_PROGRESS;\\r\\n        } else {\\r\\n            // notify user to select 1 or 2\\r\\n            taskStatus = Status.COMPLETE;\\r\\n        }\\r\\n\\r\\n        Task memory existingTask = departmentalTask[department][taskID];\\r\\n\\r\\n        require(\\r\\n            msg.sender == existingTask.taskAssignee.subordinateAddress,\\r\\n            \\\"Incorrect \\\"\\r\\n        );\\r\\n\\r\\n        existingTask.location = location;\\r\\n        existingTask.taskStatus = taskStatus;\\r\\n\\r\\n        emit TaskReport(taskID, location, taskStatus);\\r\\n    }\\r\\n\\r\\n    function performTaskAppraisal(\\r\\n        bytes32 taskId,\\r\\n        bytes32 superiorId,\\r\\n        bytes32 subordinateId,\\r\\n        string memory department\\r\\n    ) public onlySuperior(department, superiorId) {\\r\\n        Task memory existingTask = departmentalTask[department][taskId];\\r\\n        Subordinate memory currentSubordinate = departmentalSubordinate[department][subordinateId];\\r\\n\\r\\n        if (block.timestamp > existingTask.deadline) {\\r\\n            if (existingTask.taskStatus == Status.COMPLETE) {\\r\\n                currentSubordinate.performanceScore += 1;\\r\\n            } else {\\r\\n                currentSubordinate.performanceScore -= 1;\\r\\n            }\\r\\n        } else {\\r\\n            return;\\r\\n        }\\r\\n\\r\\n        emit SubordinateAppraisal(\\r\\n            currentSubordinate.subordinateAddress,\\r\\n            currentSubordinate.performanceScore\\r\\n        );\\r\\n    }\\r\\n\\r\\n    function getSuperiorStatus(\\r\\n        string memory department, \\r\\n        bytes32 superiorId\\r\\n    ) public view returns (bool) {\\r\\n        RoleType hierarchyRole = departmentalRoles[department][msg.sender];\\r\\n\\r\\n        address superiorAdress = departmentalSuperior[department][superiorId].superiorAddress;\\r\\n        bool superiorStatus = departmentalSuperiorToBool[department][superiorAdress];\\r\\n\\r\\n        if (hierarchyRole == RoleType.SUPERIOR && superiorStatus == true) {\\r\\n            return true;\\r\\n        } else {\\r\\n            return false;\\r\\n        }\\r\\n    }\\r\\n\\r\\n    function getSubordinateStatus(\\r\\n        string memory department,\\r\\n        bytes32 subordinateId\\r\\n    ) public view returns (bool) {\\r\\n        RoleType hierarchyRole = departmentalRoles[department][msg.sender];\\r\\n\\r\\n        address subordinateAddress = departmentalSubordinate[department][subordinateId].subordinateAddress;\\r\\n        bool subordinateStatus = departmentalSubordinateToBool[department][subordinateAddress];\\r\\n\\r\\n        if (hierarchyRole == RoleType.SUBORDINATE && subordinateStatus == true) {\\r\\n            return true;\\r\\n        } else {\\r\\n            return false;\\r\\n        }\\r\\n    }\\r\\n\\r\\n    function getTask(string memory department, bytes32 taskID) public view returns (Task memory) {\\r\\n        Task memory existingTask = departmentalTask[department][taskID];\\r\\n        return existingTask;\\r\\n    }\\r\\n\\r\\n    function getSuperior(string memory department, bytes32 superiorID) public view returns(Superior memory) {\\r\\n        Superior memory existingSuperior = departmentalSuperior[department][superiorID];\\r\\n        return existingSuperior;\\r\\n    }\\r\\n\\r\\n\\r\\n    function getSubordinate(string memory department, bytes32 subordinateID) public view returns (Subordinate memory) {\\r\\n        Subordinate memory existingSubordinate = departmentalSubordinate[department][subordinateID];\\r\\n        return existingSubordinate;\\r\\n    }\\r\\n} \\r\\n\\r\\n/*\\r\\n\\r\\nbytes public hierarchySetID\\r\\nmapping(Hierarchy => mapping(string => Hierarchy[])) public nestedDeptHierarchies;\\r\\n\\r\\nfunction nestWorkGroups(\\r\\n    string memory department, \\r\\n    bytes32 superiorId\\r\\n) public onlySuperior(department, superiorId) {\\r\\n        \\r\\n}\\r\\n\\r\\nfunction modifyHierarchySets() onlyAdmin returns () {\\r\\n        \\r\\n}\\r\\n\\r\\n*/\\r\\n\",\"keccak256\":\"0x9c4bfcd695a255b623ae57c80d6d2f09b4ae436e594498aeebf9151b15fb23e7\",\"license\":\"SEE LICENSE IN LICENSE\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061001a33610031565b600380546001600160a01b03191633179055610081565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b612722806100906000396000f3fe608060405234801561001057600080fd5b50600436106101165760003560e01c80638dd9de01116100a2578063b468c26b11610071578063b468c26b14610295578063c5dc6a64146102a8578063c7856a80146102f3578063f2fde38b14610313578063f851a4401461032657600080fd5b80638dd9de011461023c578063903a766a1461024f578063a04a9f411461026f578063a49006221461028257600080fd5b8063691d7beb116100e9578063691d7beb146101c9578063715018a6146101dc57806381c708e2146101e457806389f166a9146102045780638da5cb5b1461021757600080fd5b8063050635ec1461011b57806312702fd0146101305780632e1ea8981461014357806363fd53701461016b575b600080fd5b61012e610129366004611e66565b610339565b005b61012e61013e366004611eb4565b610539565b610156610151366004611f0b565b610755565b60405190151581526020015b60405180910390f35b6101bb610179366004611f0b565b8151602081840181018051600582529282019482019490942091909352909152600090815260409020546001600160a01b03811690600160a01b900460ff1682565b604051610162929190611f84565b61012e6101d7366004611faa565b61083a565b61012e610bd9565b6101f76101f2366004611f0b565b610bed565b6040516101629190612054565b61012e610212366004612062565b610c95565b6000546001600160a01b03165b6040516001600160a01b039091168152602001610162565b61012e61024a3660046120bc565b611082565b61026261025d366004611f0b565b611311565b6040516101629190612160565b61012e61027d36600461218d565b6113a3565b61012e6102903660046121f3565b61174f565b6101566102a3366004611f0b565b6118e5565b6102e66102b6366004611e66565b81516020818401810180516009825292820194820194909420919093529091526000908152604090205460ff1681565b6040516101629190612243565b610306610301366004611f0b565b61198e565b60405161016291906122a6565b61012e61032136600461233c565b611c27565b600354610224906001600160a01b031681565b6003546001600160a01b031633146103645760405163a969a2b560e01b815260040160405180910390fd5b610372600280546001019055565b600061037d60025490565b905060006040518060400160405280846001600160a01b03168152602001600160028111156103ae576103ae611f50565b8152509050600084836040516020016103c892919061235e565b604051602081830303815290604052805190602001209050816005866040516103f19190612380565b90815260408051918290036020908101909220600085815290835220825181546001600160a01b039091166001600160a01b031982168117835592840151919283916001600160a81b03191617600160a01b83600281111561045557610455611f50565b0217905550905050600160068660405161046f9190612380565b90815260408051602092819003830181206001600160a01b038916600090815293529120805460ff1916921515929092179091556001906009906104b4908890612380565b90815260408051602092819003830190206001600160a01b038816600090815292529020805460ff191660018360028111156104f2576104f2611f50565b02179055507fdb3726a1a3239a53f0fd7d366787e8aeccf5678e3b032cb9864f17748c7cef1585858360405161052a9392919061239c565b60405180910390a15050505050565b818160006105478383610755565b905060018115151461056c57604051630d783bcb60e01b815260040160405180910390fd5b61057a600180546001019055565b600061058560015490565b905060006040518060600160405280896001600160a01b031681526020016002808111156105b5576105b5611f50565b815260200160008152509050600087836040516020016105d692919061235e565b604051602081830303815290604052805190602001209050816007896040516105ff9190612380565b90815260408051918290036020908101909220600085815290835220825181546001600160a01b039091166001600160a01b031982168117835592840151919283916001600160a81b03191617600160a01b83600281111561066357610663611f50565b02179055506040820151816001015590505060026009896040516106879190612380565b90815260408051602092819003830190206001600160a01b038d16600090815292529020805460ff191660018360028111156106c5576106c5611f50565b021790555060016008896040516106dc9190612380565b908152604080516020928190038301812086516001600160a01b0316600090815293529120805460ff1916921515929092179091557f48da09c9e6e57d61b450ee7e438ddd6a817ec8395cc483316d8012854057279a90610742908a908c9085906123ca565b60405180910390a1505050505050505050565b6000806009846040516107689190612380565b908152604080516020928190038301812033600090815293529082205460ff169250600590610798908790612380565b908152604080516020928190038301812060008881529352908220546001600160a01b031692506006906107cd908890612380565b90815260408051602092819003830190206001600160a01b0385166000908152925290205460ff16905060015b83600281111561080c5761080c611f50565b14801561081b57506001811515145b1561082c5760019350505050610834565b600093505050505b92915050565b8184600061084883836118e5565b905060018115151461086d576040516362b0503360e01b815260040160405180910390fd5b60008460010361087f57506001610883565b5060025b60006004876040516108959190612380565b90815260408051918290036020908101832060008e8152915281902060c083019091528054829082906108c79061241a565b80601f01602080910402602001604051908101604052809291908181526020018280546108f39061241a565b80156109405780601f1061091557610100808354040283529160200191610940565b820191906000526020600020905b81548152906001019060200180831161092357829003601f168201915b505050505081526020016001820180546109599061241a565b80601f01602080910402602001604051908101604052809291908181526020018280546109859061241a565b80156109d25780601f106109a7576101008083540402835291602001916109d2565b820191906000526020600020905b8154815290600101906020018083116109b557829003601f168201915b505050505081526020016002820180546109eb9061241a565b80601f0160208091040260200160405190810160405280929190818152602001828054610a179061241a565b8015610a645780601f10610a3957610100808354040283529160200191610a64565b820191906000526020600020905b815481529060010190602001808311610a4757829003601f168201915b505050918352505060038201546020820152600482015460409091019060ff166002811115610a9557610a95611f50565b6002811115610aa657610aa6611f50565b815260408051606081019091526005830180546001600160a01b0381168352602093840193830190600160a01b900460ff166002811115610ae957610ae9611f50565b6002811115610afa57610afa611f50565b81526001919091015460209091015290525060a0810151519091506001600160a01b03163314610b5e5760405162461bcd60e51b815260206004820152600a602482015269024b731b7b93932b1ba160b51b60448201526064015b60405180910390fd5b6040810188905260808101826002811115610b7b57610b7b611f50565b90816002811115610b8e57610b8e611f50565b815250507f6ac446add32b0faf5e982cf129744e329aa10109ecb5c73b373be1a4b8c0ad5d8a8984604051610bc593929190612454565b60405180910390a150505050505050505050565b610be1611ca0565b610beb6000611cfa565b565b60408051606081018252600080825260208201819052918101919091526000600784604051610c1c9190612380565b908152604080516020928190038301812060008781529084528290206060820190925281546001600160a01b03811682529092830190600160a01b900460ff166002811115610c6d57610c6d611f50565b6002811115610c7e57610c7e611f50565b815260019190910154602090910152949350505050565b80836000610ca38383610755565b9050600181151514610cc857604051630d783bcb60e01b815260040160405180910390fd5b6000600485604051610cda9190612380565b90815260408051918290036020908101832060008c8152915281902060c08301909152805482908290610d0c9061241a565b80601f0160208091040260200160405190810160405280929190818152602001828054610d389061241a565b8015610d855780601f10610d5a57610100808354040283529160200191610d85565b820191906000526020600020905b815481529060010190602001808311610d6857829003601f168201915b50505050508152602001600182018054610d9e9061241a565b80601f0160208091040260200160405190810160405280929190818152602001828054610dca9061241a565b8015610e175780601f10610dec57610100808354040283529160200191610e17565b820191906000526020600020905b815481529060010190602001808311610dfa57829003601f168201915b50505050508152602001600282018054610e309061241a565b80601f0160208091040260200160405190810160405280929190818152602001828054610e5c9061241a565b8015610ea95780601f10610e7e57610100808354040283529160200191610ea9565b820191906000526020600020905b815481529060010190602001808311610e8c57829003601f168201915b505050918352505060038201546020820152600482015460409091019060ff166002811115610eda57610eda611f50565b6002811115610eeb57610eeb611f50565b815260408051606081019091526005830180546001600160a01b0381168352602093840193830190600160a01b900460ff166002811115610f2e57610f2e611f50565b6002811115610f3f57610f3f611f50565b81526020016001820154815250508152505090506000600786604051610f659190612380565b908152604080516020928190038301812060008b81529084528290206060820190925281546001600160a01b03811682529092830190600160a01b900460ff166002811115610fb657610fb6611f50565b6002811115610fc757610fc7611f50565b81526020016001820154815250509050816060015142111561102e57600282608001516002811115610ffb57610ffb611f50565b0361101b57600181604001818151611013919061249c565b905250611035565b60018160400181815161101391906124af565b5050611079565b805160408083015181516001600160a01b03909316835260208301527f73f5ac5d5336b4fb57d07727df07a0c1b8c19a02a598a662c7e7ca176c73f3dd9101610742565b50505050505050565b818660006110908383610755565b90506001811515146110b557604051630d783bcb60e01b815260040160405180910390fd5b60006110c485620151806124c2565b6110ce904261249c565b905060006007876040516110e29190612380565b908152604080516020928190038301812060008e81529084528290206060820190925281546001600160a01b03811682529092830190600160a01b900460ff16600281111561113357611133611f50565b600281111561114457611144611f50565b8152602001600182015481525050905060006040518060c001604052808981526020018b81526020018a81526020018481526020016000600281111561118c5761118c611f50565b815260200183815250905060008a8a6040516020016111ac9291906124d9565b6040516020818303038152906040528051906020012090508160048a6040516111d59190612380565b9081526040805160209281900383019020600085815292529020815181906111fd9082612557565b50602082015160018201906112129082612557565b50604082015160028201906112279082612557565b5060608201516003820155608082015160048201805460ff1916600183600281111561125557611255611f50565b021790555060a082015180516005830180546001600160a01b031981166001600160a01b0390931692831782556020840151919283916001600160a81b03191617600160a01b8360028111156112ad576112ad611f50565b02179055506040820151816001015550509050507f828852484f537b2c507e3c95f684721331655ae3e9a451ba45ba89182aacdd3c8b8b8385608001516040516112fa9493929190612617565b60405180910390a150505050505050505050505050565b604080518082019091526000808252602082015260006005846040516113379190612380565b9081526040805160209281900383018120600087815290845282902081830190925281546001600160a01b03811682529092830190600160a01b900460ff16600281111561138757611387611f50565b600281111561139857611398611f50565b905250949350505050565b6003546001600160a01b031633146113ce5760405163a969a2b560e01b815260040160405180910390fd5b6113dc600280546001019055565b60006113e760025490565b905060006040518060400160405280856001600160a01b031681526020016001600281111561141857611418611f50565b81525090506000868360405160200161143292919061235e565b604051602081830303815290604052805190602001209050600060078860405161145c9190612380565b908152604080516020928190038301812060008981529084528290206060820190925281546001600160a01b03811682529092830190600160a01b900460ff1660028111156114ad576114ad611f50565b60028111156114be576114be611f50565b815260200160018201548152505090506008886040516114de9190612380565b908152604080516020928190038301902083516001600160a01b03166000908152925290205460ff1615156001036115575760006008896040516115229190612380565b908152604080516020928190038301902084516001600160a01b0316600090815292529020805460ff19169115159190911790555b826005896040516115689190612380565b90815260408051918290036020908101909220600086815290835220825181546001600160a01b039091166001600160a01b031982168117835592840151919283916001600160a81b03191617600160a01b8360028111156115cc576115cc611f50565b021790555090505060006006896040516115e69190612380565b90815260408051602092819003830181206001600160a01b038c16600090815293529120805460ff19169215159290921790915560019060069061162b908b90612380565b908152604080516020928190038301812085516001600160a01b031660009081529352908220805460ff19169315159390931790925590600990611670908b90612380565b90815260408051602092819003830190206001600160a01b038b16600090815292529020805460ff191660018360028111156116ae576116ae611f50565b021790555060016009896040516116c59190612380565b90815260408051602092819003830190206001600160a01b038a16600090815292529020805460ff1916600183600281111561170357611703611f50565b02179055507feac02a59e2529d26d22f3af45486289c4b422f2f6852e055d6d50b36ec1c23ab87878a8560405161173d949392919061265d565b60405180910390a15050505050505050565b8083600061175d8383610755565b905060018115151461178257604051630d783bcb60e01b815260040160405180910390fd5b60006007856040516117949190612380565b908152604080516020928190038301812060008a81529084528290206060820190925281546001600160a01b03811682529092830190600160a01b900460ff1660028111156117e5576117e5611f50565b60028111156117f6576117f6611f50565b8152602001600182015481525050905060006009866040516118189190612380565b908152604080516020928190038301902084516001600160a01b0316600090815292529020805460ff1916600183600281111561185757611857611f50565b0217905550600060088660405161186e9190612380565b908152604080516020928190038301812085516001600160a01b0316600090815293529120805460ff19169215159290921790915581517f48da09c9e6e57d61b450ee7e438ddd6a817ec8395cc483316d8012854057279a916118d49188918a9061269a565b60405180910390a150505050505050565b6000806009846040516118f89190612380565b908152604080516020928190038301812033600090815293529082205460ff169250600790611928908790612380565b908152604080516020928190038301812060008881529352908220546001600160a01b0316925060089061195d908890612380565b90815260408051602092819003830190206001600160a01b0385166000908152925290205460ff16905060026107fa565b611996611d4a565b60006004846040516119a89190612380565b9081526040805191829003602090810183206000878152915281902060c083019091528054829082906119da9061241a565b80601f0160208091040260200160405190810160405280929190818152602001828054611a069061241a565b8015611a535780601f10611a2857610100808354040283529160200191611a53565b820191906000526020600020905b815481529060010190602001808311611a3657829003601f168201915b50505050508152602001600182018054611a6c9061241a565b80601f0160208091040260200160405190810160405280929190818152602001828054611a989061241a565b8015611ae55780601f10611aba57610100808354040283529160200191611ae5565b820191906000526020600020905b815481529060010190602001808311611ac857829003601f168201915b50505050508152602001600282018054611afe9061241a565b80601f0160208091040260200160405190810160405280929190818152602001828054611b2a9061241a565b8015611b775780601f10611b4c57610100808354040283529160200191611b77565b820191906000526020600020905b815481529060010190602001808311611b5a57829003601f168201915b505050918352505060038201546020820152600482015460409091019060ff166002811115611ba857611ba8611f50565b6002811115611bb957611bb9611f50565b815260408051606081019091526005830180546001600160a01b0381168352602093840193830190600160a01b900460ff166002811115611bfc57611bfc611f50565b6002811115611c0d57611c0d611f50565b815260019190910154602090910152905250949350505050565b611c2f611ca0565b6001600160a01b038116611c945760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b6064820152608401610b55565b611c9d81611cfa565b50565b6000546001600160a01b03163314610beb5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610b55565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b6040518060c001604052806060815260200160608152602001606081526020016000815260200160006002811115611d8457611d84611f50565b815260408051606081018252600080825260208281018290529282015291015290565b634e487b7160e01b600052604160045260246000fd5b600082601f830112611dce57600080fd5b813567ffffffffffffffff80821115611de957611de9611da7565b604051601f8301601f19908116603f01168101908282118183101715611e1157611e11611da7565b81604052838152866020858801011115611e2a57600080fd5b836020870160208301376000602085830101528094505050505092915050565b80356001600160a01b0381168114611e6157600080fd5b919050565b60008060408385031215611e7957600080fd5b823567ffffffffffffffff811115611e9057600080fd5b611e9c85828601611dbd565b925050611eab60208401611e4a565b90509250929050565b600080600060608486031215611ec957600080fd5b611ed284611e4a565b9250602084013567ffffffffffffffff811115611eee57600080fd5b611efa86828701611dbd565b925050604084013590509250925092565b60008060408385031215611f1e57600080fd5b823567ffffffffffffffff811115611f3557600080fd5b611f4185828601611dbd565b95602094909401359450505050565b634e487b7160e01b600052602160045260246000fd5b60038110611c9d57634e487b7160e01b600052602160045260246000fd5b6001600160a01b038316815260408101611f9d83611f66565b8260208301529392505050565b600080600080600060a08688031215611fc257600080fd5b8535945060208601359350604086013567ffffffffffffffff80821115611fe857600080fd5b611ff489838a01611dbd565b9450606088013591508082111561200a57600080fd5b5061201788828901611dbd565b95989497509295608001359392505050565b80516001600160a01b03168252602081015161204481611f66565b6020830152604090810151910152565b606081016108348284612029565b6000806000806080858703121561207857600080fd5b843593506020850135925060408501359150606085013567ffffffffffffffff8111156120a457600080fd5b6120b087828801611dbd565b91505092959194509250565b60008060008060008060c087890312156120d557600080fd5b8635955060208701359450604087013567ffffffffffffffff808211156120fb57600080fd5b6121078a838b01611dbd565b9550606089013591508082111561211d57600080fd5b6121298a838b01611dbd565b9450608089013591508082111561213f57600080fd5b5061214c89828a01611dbd565b92505060a087013590509295509295509295565b81516001600160a01b031681526020820151604082019061218081611f66565b8060208401525092915050565b600080600080608085870312156121a357600080fd5b843567ffffffffffffffff8111156121ba57600080fd5b6121c687828801611dbd565b9450506121d560208601611e4a565b92506121e360408601611e4a565b9396929550929360600135925050565b60008060006060848603121561220857600080fd5b8335925060208401359150604084013567ffffffffffffffff81111561222d57600080fd5b61223986828701611dbd565b9150509250925092565b6020810161225083611f66565b91905290565b60005b83811015612271578181015183820152602001612259565b50506000910152565b60008151808452612292816020860160208601612256565b601f01601f19169290920160200192915050565b602081526000825161010060208401526122c461012084018261227a565b90506020840151601f19808584030160408601526122e2838361227a565b9250604086015191508085840301606086015250612300828261227a565b91505060608401516080840152608084015161231b81611f66565b8060a08501525060a084015161233460c0850182612029565b509392505050565b60006020828403121561234e57600080fd5b61235782611e4a565b9392505050565b604081526000612371604083018561227a565b90508260208301529392505050565b60008251612392818460208701612256565b9190910192915050565b6060815260006123af606083018661227a565b6001600160a01b039490941660208301525060400152919050565b6080815260006123dd608083018661227a565b60018060a01b038516602084015283604084015282810360608401526005815264185919195960da1b602082015260408101915050949350505050565b600181811c9082168061242e57607f821691505b60208210810361244e57634e487b7160e01b600052602260045260246000fd5b50919050565b83815260606020820152600061246d606083018561227a565b905061247883611f66565b826040830152949350505050565b634e487b7160e01b600052601160045260246000fd5b8082018082111561083457610834612486565b8181038181111561083457610834612486565b808202811582820484141761083457610834612486565b600083516124eb818460208801612256565b8351908301906124ff818360208801612256565b01949350505050565b601f82111561255257600081815260208120601f850160051c8101602086101561252f5750805b601f850160051c820191505b8181101561254e5782815560010161253b565b5050505b505050565b815167ffffffffffffffff81111561257157612571611da7565b6125858161257f845461241a565b84612508565b602080601f8311600181146125ba57600084156125a25750858301515b600019600386901b1c1916600185901b17855561254e565b600085815260208120601f198616915b828110156125e9578886015182559484019460019091019084016125ca565b50858210156126075787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b60808152600061262a608083018761227a565b828103602084015261263c818761227a565b91505083604083015261264e83611f66565b82606083015295945050505050565b6001600160a01b038581168252841660208201526080604082018190526000906126899083018561227a565b905082606083015295945050505050565b6080815260006126ad608083018661227a565b60018060a01b0385166020840152836040840152828103606084015260078152661c995b5bdd995960ca1b60208201526040810191505094935050505056fea26469706673582212207b05c62b0b9d814ec2ef39fc6ac90c1fbf1fc4db98a8c10a870bc91f8e67d89664736f6c63430008110033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106101165760003560e01c80638dd9de01116100a2578063b468c26b11610071578063b468c26b14610295578063c5dc6a64146102a8578063c7856a80146102f3578063f2fde38b14610313578063f851a4401461032657600080fd5b80638dd9de011461023c578063903a766a1461024f578063a04a9f411461026f578063a49006221461028257600080fd5b8063691d7beb116100e9578063691d7beb146101c9578063715018a6146101dc57806381c708e2146101e457806389f166a9146102045780638da5cb5b1461021757600080fd5b8063050635ec1461011b57806312702fd0146101305780632e1ea8981461014357806363fd53701461016b575b600080fd5b61012e610129366004611e66565b610339565b005b61012e61013e366004611eb4565b610539565b610156610151366004611f0b565b610755565b60405190151581526020015b60405180910390f35b6101bb610179366004611f0b565b8151602081840181018051600582529282019482019490942091909352909152600090815260409020546001600160a01b03811690600160a01b900460ff1682565b604051610162929190611f84565b61012e6101d7366004611faa565b61083a565b61012e610bd9565b6101f76101f2366004611f0b565b610bed565b6040516101629190612054565b61012e610212366004612062565b610c95565b6000546001600160a01b03165b6040516001600160a01b039091168152602001610162565b61012e61024a3660046120bc565b611082565b61026261025d366004611f0b565b611311565b6040516101629190612160565b61012e61027d36600461218d565b6113a3565b61012e6102903660046121f3565b61174f565b6101566102a3366004611f0b565b6118e5565b6102e66102b6366004611e66565b81516020818401810180516009825292820194820194909420919093529091526000908152604090205460ff1681565b6040516101629190612243565b610306610301366004611f0b565b61198e565b60405161016291906122a6565b61012e61032136600461233c565b611c27565b600354610224906001600160a01b031681565b6003546001600160a01b031633146103645760405163a969a2b560e01b815260040160405180910390fd5b610372600280546001019055565b600061037d60025490565b905060006040518060400160405280846001600160a01b03168152602001600160028111156103ae576103ae611f50565b8152509050600084836040516020016103c892919061235e565b604051602081830303815290604052805190602001209050816005866040516103f19190612380565b90815260408051918290036020908101909220600085815290835220825181546001600160a01b039091166001600160a01b031982168117835592840151919283916001600160a81b03191617600160a01b83600281111561045557610455611f50565b0217905550905050600160068660405161046f9190612380565b90815260408051602092819003830181206001600160a01b038916600090815293529120805460ff1916921515929092179091556001906009906104b4908890612380565b90815260408051602092819003830190206001600160a01b038816600090815292529020805460ff191660018360028111156104f2576104f2611f50565b02179055507fdb3726a1a3239a53f0fd7d366787e8aeccf5678e3b032cb9864f17748c7cef1585858360405161052a9392919061239c565b60405180910390a15050505050565b818160006105478383610755565b905060018115151461056c57604051630d783bcb60e01b815260040160405180910390fd5b61057a600180546001019055565b600061058560015490565b905060006040518060600160405280896001600160a01b031681526020016002808111156105b5576105b5611f50565b815260200160008152509050600087836040516020016105d692919061235e565b604051602081830303815290604052805190602001209050816007896040516105ff9190612380565b90815260408051918290036020908101909220600085815290835220825181546001600160a01b039091166001600160a01b031982168117835592840151919283916001600160a81b03191617600160a01b83600281111561066357610663611f50565b02179055506040820151816001015590505060026009896040516106879190612380565b90815260408051602092819003830190206001600160a01b038d16600090815292529020805460ff191660018360028111156106c5576106c5611f50565b021790555060016008896040516106dc9190612380565b908152604080516020928190038301812086516001600160a01b0316600090815293529120805460ff1916921515929092179091557f48da09c9e6e57d61b450ee7e438ddd6a817ec8395cc483316d8012854057279a90610742908a908c9085906123ca565b60405180910390a1505050505050505050565b6000806009846040516107689190612380565b908152604080516020928190038301812033600090815293529082205460ff169250600590610798908790612380565b908152604080516020928190038301812060008881529352908220546001600160a01b031692506006906107cd908890612380565b90815260408051602092819003830190206001600160a01b0385166000908152925290205460ff16905060015b83600281111561080c5761080c611f50565b14801561081b57506001811515145b1561082c5760019350505050610834565b600093505050505b92915050565b8184600061084883836118e5565b905060018115151461086d576040516362b0503360e01b815260040160405180910390fd5b60008460010361087f57506001610883565b5060025b60006004876040516108959190612380565b90815260408051918290036020908101832060008e8152915281902060c083019091528054829082906108c79061241a565b80601f01602080910402602001604051908101604052809291908181526020018280546108f39061241a565b80156109405780601f1061091557610100808354040283529160200191610940565b820191906000526020600020905b81548152906001019060200180831161092357829003601f168201915b505050505081526020016001820180546109599061241a565b80601f01602080910402602001604051908101604052809291908181526020018280546109859061241a565b80156109d25780601f106109a7576101008083540402835291602001916109d2565b820191906000526020600020905b8154815290600101906020018083116109b557829003601f168201915b505050505081526020016002820180546109eb9061241a565b80601f0160208091040260200160405190810160405280929190818152602001828054610a179061241a565b8015610a645780601f10610a3957610100808354040283529160200191610a64565b820191906000526020600020905b815481529060010190602001808311610a4757829003601f168201915b505050918352505060038201546020820152600482015460409091019060ff166002811115610a9557610a95611f50565b6002811115610aa657610aa6611f50565b815260408051606081019091526005830180546001600160a01b0381168352602093840193830190600160a01b900460ff166002811115610ae957610ae9611f50565b6002811115610afa57610afa611f50565b81526001919091015460209091015290525060a0810151519091506001600160a01b03163314610b5e5760405162461bcd60e51b815260206004820152600a602482015269024b731b7b93932b1ba160b51b60448201526064015b60405180910390fd5b6040810188905260808101826002811115610b7b57610b7b611f50565b90816002811115610b8e57610b8e611f50565b815250507f6ac446add32b0faf5e982cf129744e329aa10109ecb5c73b373be1a4b8c0ad5d8a8984604051610bc593929190612454565b60405180910390a150505050505050505050565b610be1611ca0565b610beb6000611cfa565b565b60408051606081018252600080825260208201819052918101919091526000600784604051610c1c9190612380565b908152604080516020928190038301812060008781529084528290206060820190925281546001600160a01b03811682529092830190600160a01b900460ff166002811115610c6d57610c6d611f50565b6002811115610c7e57610c7e611f50565b815260019190910154602090910152949350505050565b80836000610ca38383610755565b9050600181151514610cc857604051630d783bcb60e01b815260040160405180910390fd5b6000600485604051610cda9190612380565b90815260408051918290036020908101832060008c8152915281902060c08301909152805482908290610d0c9061241a565b80601f0160208091040260200160405190810160405280929190818152602001828054610d389061241a565b8015610d855780601f10610d5a57610100808354040283529160200191610d85565b820191906000526020600020905b815481529060010190602001808311610d6857829003601f168201915b50505050508152602001600182018054610d9e9061241a565b80601f0160208091040260200160405190810160405280929190818152602001828054610dca9061241a565b8015610e175780601f10610dec57610100808354040283529160200191610e17565b820191906000526020600020905b815481529060010190602001808311610dfa57829003601f168201915b50505050508152602001600282018054610e309061241a565b80601f0160208091040260200160405190810160405280929190818152602001828054610e5c9061241a565b8015610ea95780601f10610e7e57610100808354040283529160200191610ea9565b820191906000526020600020905b815481529060010190602001808311610e8c57829003601f168201915b505050918352505060038201546020820152600482015460409091019060ff166002811115610eda57610eda611f50565b6002811115610eeb57610eeb611f50565b815260408051606081019091526005830180546001600160a01b0381168352602093840193830190600160a01b900460ff166002811115610f2e57610f2e611f50565b6002811115610f3f57610f3f611f50565b81526020016001820154815250508152505090506000600786604051610f659190612380565b908152604080516020928190038301812060008b81529084528290206060820190925281546001600160a01b03811682529092830190600160a01b900460ff166002811115610fb657610fb6611f50565b6002811115610fc757610fc7611f50565b81526020016001820154815250509050816060015142111561102e57600282608001516002811115610ffb57610ffb611f50565b0361101b57600181604001818151611013919061249c565b905250611035565b60018160400181815161101391906124af565b5050611079565b805160408083015181516001600160a01b03909316835260208301527f73f5ac5d5336b4fb57d07727df07a0c1b8c19a02a598a662c7e7ca176c73f3dd9101610742565b50505050505050565b818660006110908383610755565b90506001811515146110b557604051630d783bcb60e01b815260040160405180910390fd5b60006110c485620151806124c2565b6110ce904261249c565b905060006007876040516110e29190612380565b908152604080516020928190038301812060008e81529084528290206060820190925281546001600160a01b03811682529092830190600160a01b900460ff16600281111561113357611133611f50565b600281111561114457611144611f50565b8152602001600182015481525050905060006040518060c001604052808981526020018b81526020018a81526020018481526020016000600281111561118c5761118c611f50565b815260200183815250905060008a8a6040516020016111ac9291906124d9565b6040516020818303038152906040528051906020012090508160048a6040516111d59190612380565b9081526040805160209281900383019020600085815292529020815181906111fd9082612557565b50602082015160018201906112129082612557565b50604082015160028201906112279082612557565b5060608201516003820155608082015160048201805460ff1916600183600281111561125557611255611f50565b021790555060a082015180516005830180546001600160a01b031981166001600160a01b0390931692831782556020840151919283916001600160a81b03191617600160a01b8360028111156112ad576112ad611f50565b02179055506040820151816001015550509050507f828852484f537b2c507e3c95f684721331655ae3e9a451ba45ba89182aacdd3c8b8b8385608001516040516112fa9493929190612617565b60405180910390a150505050505050505050505050565b604080518082019091526000808252602082015260006005846040516113379190612380565b9081526040805160209281900383018120600087815290845282902081830190925281546001600160a01b03811682529092830190600160a01b900460ff16600281111561138757611387611f50565b600281111561139857611398611f50565b905250949350505050565b6003546001600160a01b031633146113ce5760405163a969a2b560e01b815260040160405180910390fd5b6113dc600280546001019055565b60006113e760025490565b905060006040518060400160405280856001600160a01b031681526020016001600281111561141857611418611f50565b81525090506000868360405160200161143292919061235e565b604051602081830303815290604052805190602001209050600060078860405161145c9190612380565b908152604080516020928190038301812060008981529084528290206060820190925281546001600160a01b03811682529092830190600160a01b900460ff1660028111156114ad576114ad611f50565b60028111156114be576114be611f50565b815260200160018201548152505090506008886040516114de9190612380565b908152604080516020928190038301902083516001600160a01b03166000908152925290205460ff1615156001036115575760006008896040516115229190612380565b908152604080516020928190038301902084516001600160a01b0316600090815292529020805460ff19169115159190911790555b826005896040516115689190612380565b90815260408051918290036020908101909220600086815290835220825181546001600160a01b039091166001600160a01b031982168117835592840151919283916001600160a81b03191617600160a01b8360028111156115cc576115cc611f50565b021790555090505060006006896040516115e69190612380565b90815260408051602092819003830181206001600160a01b038c16600090815293529120805460ff19169215159290921790915560019060069061162b908b90612380565b908152604080516020928190038301812085516001600160a01b031660009081529352908220805460ff19169315159390931790925590600990611670908b90612380565b90815260408051602092819003830190206001600160a01b038b16600090815292529020805460ff191660018360028111156116ae576116ae611f50565b021790555060016009896040516116c59190612380565b90815260408051602092819003830190206001600160a01b038a16600090815292529020805460ff1916600183600281111561170357611703611f50565b02179055507feac02a59e2529d26d22f3af45486289c4b422f2f6852e055d6d50b36ec1c23ab87878a8560405161173d949392919061265d565b60405180910390a15050505050505050565b8083600061175d8383610755565b905060018115151461178257604051630d783bcb60e01b815260040160405180910390fd5b60006007856040516117949190612380565b908152604080516020928190038301812060008a81529084528290206060820190925281546001600160a01b03811682529092830190600160a01b900460ff1660028111156117e5576117e5611f50565b60028111156117f6576117f6611f50565b8152602001600182015481525050905060006009866040516118189190612380565b908152604080516020928190038301902084516001600160a01b0316600090815292529020805460ff1916600183600281111561185757611857611f50565b0217905550600060088660405161186e9190612380565b908152604080516020928190038301812085516001600160a01b0316600090815293529120805460ff19169215159290921790915581517f48da09c9e6e57d61b450ee7e438ddd6a817ec8395cc483316d8012854057279a916118d49188918a9061269a565b60405180910390a150505050505050565b6000806009846040516118f89190612380565b908152604080516020928190038301812033600090815293529082205460ff169250600790611928908790612380565b908152604080516020928190038301812060008881529352908220546001600160a01b0316925060089061195d908890612380565b90815260408051602092819003830190206001600160a01b0385166000908152925290205460ff16905060026107fa565b611996611d4a565b60006004846040516119a89190612380565b9081526040805191829003602090810183206000878152915281902060c083019091528054829082906119da9061241a565b80601f0160208091040260200160405190810160405280929190818152602001828054611a069061241a565b8015611a535780601f10611a2857610100808354040283529160200191611a53565b820191906000526020600020905b815481529060010190602001808311611a3657829003601f168201915b50505050508152602001600182018054611a6c9061241a565b80601f0160208091040260200160405190810160405280929190818152602001828054611a989061241a565b8015611ae55780601f10611aba57610100808354040283529160200191611ae5565b820191906000526020600020905b815481529060010190602001808311611ac857829003601f168201915b50505050508152602001600282018054611afe9061241a565b80601f0160208091040260200160405190810160405280929190818152602001828054611b2a9061241a565b8015611b775780601f10611b4c57610100808354040283529160200191611b77565b820191906000526020600020905b815481529060010190602001808311611b5a57829003601f168201915b505050918352505060038201546020820152600482015460409091019060ff166002811115611ba857611ba8611f50565b6002811115611bb957611bb9611f50565b815260408051606081019091526005830180546001600160a01b0381168352602093840193830190600160a01b900460ff166002811115611bfc57611bfc611f50565b6002811115611c0d57611c0d611f50565b815260019190910154602090910152905250949350505050565b611c2f611ca0565b6001600160a01b038116611c945760405162461bcd60e51b815260206004820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b6064820152608401610b55565b611c9d81611cfa565b50565b6000546001600160a01b03163314610beb5760405162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152606401610b55565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b6040518060c001604052806060815260200160608152602001606081526020016000815260200160006002811115611d8457611d84611f50565b815260408051606081018252600080825260208281018290529282015291015290565b634e487b7160e01b600052604160045260246000fd5b600082601f830112611dce57600080fd5b813567ffffffffffffffff80821115611de957611de9611da7565b604051601f8301601f19908116603f01168101908282118183101715611e1157611e11611da7565b81604052838152866020858801011115611e2a57600080fd5b836020870160208301376000602085830101528094505050505092915050565b80356001600160a01b0381168114611e6157600080fd5b919050565b60008060408385031215611e7957600080fd5b823567ffffffffffffffff811115611e9057600080fd5b611e9c85828601611dbd565b925050611eab60208401611e4a565b90509250929050565b600080600060608486031215611ec957600080fd5b611ed284611e4a565b9250602084013567ffffffffffffffff811115611eee57600080fd5b611efa86828701611dbd565b925050604084013590509250925092565b60008060408385031215611f1e57600080fd5b823567ffffffffffffffff811115611f3557600080fd5b611f4185828601611dbd565b95602094909401359450505050565b634e487b7160e01b600052602160045260246000fd5b60038110611c9d57634e487b7160e01b600052602160045260246000fd5b6001600160a01b038316815260408101611f9d83611f66565b8260208301529392505050565b600080600080600060a08688031215611fc257600080fd5b8535945060208601359350604086013567ffffffffffffffff80821115611fe857600080fd5b611ff489838a01611dbd565b9450606088013591508082111561200a57600080fd5b5061201788828901611dbd565b95989497509295608001359392505050565b80516001600160a01b03168252602081015161204481611f66565b6020830152604090810151910152565b606081016108348284612029565b6000806000806080858703121561207857600080fd5b843593506020850135925060408501359150606085013567ffffffffffffffff8111156120a457600080fd5b6120b087828801611dbd565b91505092959194509250565b60008060008060008060c087890312156120d557600080fd5b8635955060208701359450604087013567ffffffffffffffff808211156120fb57600080fd5b6121078a838b01611dbd565b9550606089013591508082111561211d57600080fd5b6121298a838b01611dbd565b9450608089013591508082111561213f57600080fd5b5061214c89828a01611dbd565b92505060a087013590509295509295509295565b81516001600160a01b031681526020820151604082019061218081611f66565b8060208401525092915050565b600080600080608085870312156121a357600080fd5b843567ffffffffffffffff8111156121ba57600080fd5b6121c687828801611dbd565b9450506121d560208601611e4a565b92506121e360408601611e4a565b9396929550929360600135925050565b60008060006060848603121561220857600080fd5b8335925060208401359150604084013567ffffffffffffffff81111561222d57600080fd5b61223986828701611dbd565b9150509250925092565b6020810161225083611f66565b91905290565b60005b83811015612271578181015183820152602001612259565b50506000910152565b60008151808452612292816020860160208601612256565b601f01601f19169290920160200192915050565b602081526000825161010060208401526122c461012084018261227a565b90506020840151601f19808584030160408601526122e2838361227a565b9250604086015191508085840301606086015250612300828261227a565b91505060608401516080840152608084015161231b81611f66565b8060a08501525060a084015161233460c0850182612029565b509392505050565b60006020828403121561234e57600080fd5b61235782611e4a565b9392505050565b604081526000612371604083018561227a565b90508260208301529392505050565b60008251612392818460208701612256565b9190910192915050565b6060815260006123af606083018661227a565b6001600160a01b039490941660208301525060400152919050565b6080815260006123dd608083018661227a565b60018060a01b038516602084015283604084015282810360608401526005815264185919195960da1b602082015260408101915050949350505050565b600181811c9082168061242e57607f821691505b60208210810361244e57634e487b7160e01b600052602260045260246000fd5b50919050565b83815260606020820152600061246d606083018561227a565b905061247883611f66565b826040830152949350505050565b634e487b7160e01b600052601160045260246000fd5b8082018082111561083457610834612486565b8181038181111561083457610834612486565b808202811582820484141761083457610834612486565b600083516124eb818460208801612256565b8351908301906124ff818360208801612256565b01949350505050565b601f82111561255257600081815260208120601f850160051c8101602086101561252f5750805b601f850160051c820191505b8181101561254e5782815560010161253b565b5050505b505050565b815167ffffffffffffffff81111561257157612571611da7565b6125858161257f845461241a565b84612508565b602080601f8311600181146125ba57600084156125a25750858301515b600019600386901b1c1916600185901b17855561254e565b600085815260208120601f198616915b828110156125e9578886015182559484019460019091019084016125ca565b50858210156126075787850151600019600388901b60f8161c191681555b5050505050600190811b01905550565b60808152600061262a608083018761227a565b828103602084015261263c818761227a565b91505083604083015261264e83611f66565b82606083015295945050505050565b6001600160a01b038581168252841660208201526080604082018190526000906126899083018561227a565b905082606083015295945050505050565b6080815260006126ad608083018661227a565b60018060a01b0385166020840152836040840152828103606084015260078152661c995b5bdd995960ca1b60208201526040810191505094935050505056fea26469706673582212207b05c62b0b9d814ec2ef39fc6ac90c1fbf1fc4db98a8c10a870bc91f8e67d89664736f6c63430008110033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 396,
+        "contract": "contracts/WorkGroups.sol:WorkGroups",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 11403,
+        "contract": "contracts/WorkGroups.sol:WorkGroups",
+        "label": "_subordinateID",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_struct(Counter)7549_storage"
+      },
+      {
+        "astId": 11406,
+        "contract": "contracts/WorkGroups.sol:WorkGroups",
+        "label": "_superiorID",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_struct(Counter)7549_storage"
+      },
+      {
+        "astId": 11499,
+        "contract": "contracts/WorkGroups.sol:WorkGroups",
+        "label": "admin",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_address"
+      },
+      {
+        "astId": 11506,
+        "contract": "contracts/WorkGroups.sol:WorkGroups",
+        "label": "departmentalTask",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_mapping(t_string_memory_ptr,t_mapping(t_bytes32,t_struct(Task)11443_storage))"
+      },
+      {
+        "astId": 11513,
+        "contract": "contracts/WorkGroups.sol:WorkGroups",
+        "label": "departmentalSuperior",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_mapping(t_string_memory_ptr,t_mapping(t_bytes32,t_struct(Superior)11420_storage))"
+      },
+      {
+        "astId": 11519,
+        "contract": "contracts/WorkGroups.sol:WorkGroups",
+        "label": "departmentalSuperiorToBool",
+        "offset": 0,
+        "slot": "6",
+        "type": "t_mapping(t_string_memory_ptr,t_mapping(t_address,t_bool))"
+      },
+      {
+        "astId": 11526,
+        "contract": "contracts/WorkGroups.sol:WorkGroups",
+        "label": "departmentalSubordinate",
+        "offset": 0,
+        "slot": "7",
+        "type": "t_mapping(t_string_memory_ptr,t_mapping(t_bytes32,t_struct(Subordinate)11428_storage))"
+      },
+      {
+        "astId": 11532,
+        "contract": "contracts/WorkGroups.sol:WorkGroups",
+        "label": "departmentalSubordinateToBool",
+        "offset": 0,
+        "slot": "8",
+        "type": "t_mapping(t_string_memory_ptr,t_mapping(t_address,t_bool))"
+      },
+      {
+        "astId": 11539,
+        "contract": "contracts/WorkGroups.sol:WorkGroups",
+        "label": "departmentalRoles",
+        "offset": 0,
+        "slot": "9",
+        "type": "t_mapping(t_string_memory_ptr,t_mapping(t_address,t_enum(RoleType)11410))"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_enum(RoleType)11410": {
+        "encoding": "inplace",
+        "label": "enum WorkGroups.RoleType",
+        "numberOfBytes": "1"
+      },
+      "t_enum(Status)11414": {
+        "encoding": "inplace",
+        "label": "enum WorkGroups.Status",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_address,t_enum(RoleType)11410)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => enum WorkGroups.RoleType)",
+        "numberOfBytes": "32",
+        "value": "t_enum(RoleType)11410"
+      },
+      "t_mapping(t_bytes32,t_struct(Subordinate)11428_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct WorkGroups.Subordinate)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Subordinate)11428_storage"
+      },
+      "t_mapping(t_bytes32,t_struct(Superior)11420_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct WorkGroups.Superior)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Superior)11420_storage"
+      },
+      "t_mapping(t_bytes32,t_struct(Task)11443_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct WorkGroups.Task)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Task)11443_storage"
+      },
+      "t_mapping(t_string_memory_ptr,t_mapping(t_address,t_bool))": {
+        "encoding": "mapping",
+        "key": "t_string_memory_ptr",
+        "label": "mapping(string => mapping(address => bool))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_address,t_bool)"
+      },
+      "t_mapping(t_string_memory_ptr,t_mapping(t_address,t_enum(RoleType)11410))": {
+        "encoding": "mapping",
+        "key": "t_string_memory_ptr",
+        "label": "mapping(string => mapping(address => enum WorkGroups.RoleType))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_address,t_enum(RoleType)11410)"
+      },
+      "t_mapping(t_string_memory_ptr,t_mapping(t_bytes32,t_struct(Subordinate)11428_storage))": {
+        "encoding": "mapping",
+        "key": "t_string_memory_ptr",
+        "label": "mapping(string => mapping(bytes32 => struct WorkGroups.Subordinate))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_bytes32,t_struct(Subordinate)11428_storage)"
+      },
+      "t_mapping(t_string_memory_ptr,t_mapping(t_bytes32,t_struct(Superior)11420_storage))": {
+        "encoding": "mapping",
+        "key": "t_string_memory_ptr",
+        "label": "mapping(string => mapping(bytes32 => struct WorkGroups.Superior))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_bytes32,t_struct(Superior)11420_storage)"
+      },
+      "t_mapping(t_string_memory_ptr,t_mapping(t_bytes32,t_struct(Task)11443_storage))": {
+        "encoding": "mapping",
+        "key": "t_string_memory_ptr",
+        "label": "mapping(string => mapping(bytes32 => struct WorkGroups.Task))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_bytes32,t_struct(Task)11443_storage)"
+      },
+      "t_string_memory_ptr": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      },
+      "t_struct(Counter)7549_storage": {
+        "encoding": "inplace",
+        "label": "struct Counters.Counter",
+        "members": [
+          {
+            "astId": 7548,
+            "contract": "contracts/WorkGroups.sol:WorkGroups",
+            "label": "_value",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "32"
+      },
+      "t_struct(Subordinate)11428_storage": {
+        "encoding": "inplace",
+        "label": "struct WorkGroups.Subordinate",
+        "members": [
+          {
+            "astId": 11422,
+            "contract": "contracts/WorkGroups.sol:WorkGroups",
+            "label": "subordinateAddress",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address"
+          },
+          {
+            "astId": 11425,
+            "contract": "contracts/WorkGroups.sol:WorkGroups",
+            "label": "subordinateRole",
+            "offset": 20,
+            "slot": "0",
+            "type": "t_enum(RoleType)11410"
+          },
+          {
+            "astId": 11427,
+            "contract": "contracts/WorkGroups.sol:WorkGroups",
+            "label": "performanceScore",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_struct(Superior)11420_storage": {
+        "encoding": "inplace",
+        "label": "struct WorkGroups.Superior",
+        "members": [
+          {
+            "astId": 11416,
+            "contract": "contracts/WorkGroups.sol:WorkGroups",
+            "label": "superiorAddress",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address"
+          },
+          {
+            "astId": 11419,
+            "contract": "contracts/WorkGroups.sol:WorkGroups",
+            "label": "superiorRole",
+            "offset": 20,
+            "slot": "0",
+            "type": "t_enum(RoleType)11410"
+          }
+        ],
+        "numberOfBytes": "32"
+      },
+      "t_struct(Task)11443_storage": {
+        "encoding": "inplace",
+        "label": "struct WorkGroups.Task",
+        "members": [
+          {
+            "astId": 11430,
+            "contract": "contracts/WorkGroups.sol:WorkGroups",
+            "label": "department",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 11432,
+            "contract": "contracts/WorkGroups.sol:WorkGroups",
+            "label": "description",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 11434,
+            "contract": "contracts/WorkGroups.sol:WorkGroups",
+            "label": "location",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_string_storage"
+          },
+          {
+            "astId": 11436,
+            "contract": "contracts/WorkGroups.sol:WorkGroups",
+            "label": "deadline",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 11439,
+            "contract": "contracts/WorkGroups.sol:WorkGroups",
+            "label": "taskStatus",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_enum(Status)11414"
+          },
+          {
+            "astId": 11442,
+            "contract": "contracts/WorkGroups.sol:WorkGroups",
+            "label": "taskAssignee",
+            "offset": 0,
+            "slot": "5",
+            "type": "t_struct(Subordinate)11428_storage"
+          }
+        ],
+        "numberOfBytes": "224"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

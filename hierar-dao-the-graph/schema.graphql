@@ -1,0 +1,126 @@
+type DepartmentalSubordinateModified @entity(immutable: true) {
+  id: Bytes!
+  department: String! # string
+  subordinateAddress: Bytes! # address
+  WorkGroups_id: Bytes! # bytes32
+  modification: String! # string
+}
+
+type DepartmentalSuperiorAssigned @entity(immutable: true) {
+  id: Bytes!
+  department: String! # string
+  superiorAddress: Bytes! # address
+  WorkGroups_id: Bytes! # bytes32
+}
+
+type DepartmentalSuperiorModified @entity(immutable: true) {
+  id: Bytes!
+  oldSuperior: Bytes! # address
+  newSuperior: Bytes! # address
+  department: String! # string
+  newId: Bytes! # bytes32
+}
+
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+}
+
+type SubordinateAppraisal @entity(immutable: true) {
+  id: Bytes!
+  subordinateAddress: Bytes! # address
+  performanceScore: BigInt! # uint256
+}
+
+type TaskIssued @entity(immutable: true) {
+  id: Bytes!
+  description: String! # string
+  location: String! # string
+  taskID: Bytes! # bytes32
+  taskStatus: Int! # uint8
+}
+
+type TaskReport @entity(immutable: true) {
+  id: Bytes!
+  taskID: Bytes! # bytes32
+  location: String! # string
+  taskStatus: Int! # uint8
+}
+type ProposalCanceled @entity(immutable: true) {
+  id: Bytes!
+  proposalId: BigInt! # uint256
+}
+
+type ProposalCreated @entity(immutable: true) {
+  id: Bytes!
+  proposalId: BigInt! # uint256
+  proposer: Bytes! # address
+  targets: [Bytes!]! # address[]
+  values: [BigInt!]! # uint256[]
+  signatures: [String!]! # string[]
+  calldatas: [Bytes!]! # bytes[]
+  startBlock: BigInt! # uint256
+  endBlock: BigInt! # uint256
+  description: String! # string
+}
+
+type ProposalExecuted @entity(immutable: true) {
+  id: Bytes!
+  proposalId: BigInt! # uint256
+}
+
+type ProposalQueued @entity(immutable: true) {
+  id: Bytes!
+  proposalId: BigInt! # uint256
+  eta: BigInt! # uint256
+}
+
+type ProposalThresholdSet @entity(immutable: true) {
+  id: Bytes!
+  oldProposalThreshold: BigInt! # uint256
+  newProposalThreshold: BigInt! # uint256
+}
+
+type QuorumNumeratorUpdated @entity(immutable: true) {
+  id: Bytes!
+  oldQuorumNumerator: BigInt! # uint256
+  newQuorumNumerator: BigInt! # uint256
+}
+
+type TimelockChange @entity(immutable: true) {
+  id: Bytes!
+  oldTimelock: Bytes! # address
+  newTimelock: Bytes! # address
+}
+
+type VoteCast @entity(immutable: true) {
+  id: Bytes!
+  voter: Bytes! # address
+  proposalId: BigInt! # uint256
+  support: Int! # uint8
+  weight: BigInt! # uint256
+  reason: String! # string
+}
+
+type VoteCastWithParams @entity(immutable: true) {
+  id: Bytes!
+  voter: Bytes! # address
+  proposalId: BigInt! # uint256
+  support: Int! # uint8
+  weight: BigInt! # uint256
+  reason: String! # string
+  params: Bytes! # bytes
+}
+
+type VotingDelaySet @entity(immutable: true) {
+  id: Bytes!
+  oldVotingDelay: BigInt! # uint256
+  newVotingDelay: BigInt! # uint256
+}
+
+type VotingPeriodSet @entity(immutable: true) {
+  id: Bytes!
+  oldVotingPeriod: BigInt! # uint256
+  newVotingPeriod: BigInt! # uint256
+}

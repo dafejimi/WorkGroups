@@ -1,0 +1,11 @@
+{
+  "sepolia": {
+    "WorkGroups": {
+      "address": "0x7bab5d3e304a52D629b94e9529677ac6b05157EA",
+      "startBlock": 3508694
+    },
+    "GovernorContract": {
+      "address": "0xFbA937c0e3d302D59F26bd39a3c8678A4c2c2BF9"
+    }
+  }
+}
